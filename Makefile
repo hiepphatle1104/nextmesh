@@ -1,10 +1,10 @@
 .PHONY: build run server client docker docker-up docker-down
 
 build:
-	@go build -o .build/server cmd/main.go
+	@go build -o .bin/server cmd/main.go
 
 server: build
-	@.build/server
+	@.bin/server
 
 client:
 	@cd client && npm run dev
