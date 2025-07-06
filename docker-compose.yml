@@ -1,0 +1,13 @@
+services:
+  postgres:
+    image: postgres
+    container_name: postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: nextmesh
+      POSTGRES_DB: nextmesh_db
+    ports:
+      - "5432:5432"
+    volumes:
+      # - ./db/data:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
